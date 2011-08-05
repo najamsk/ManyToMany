@@ -1,0 +1,11 @@
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\M2M.dll
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\M2M.pdb
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\EntityFramework.dll
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\EntityFramework.xml
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\obj\Debug\ResolveAssemblyReference.cache
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\obj\Debug\M2M.dll
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\obj\Debug\M2M.pdb
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\System.Data.SqlServerCe.dll
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\System.Data.SqlServerCe.Entity.dll
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\WebActivator.dll
+E:\work\aspnetLearning\MCVProjects\testapp\M2M\M2M\M2M\bin\WebActivator.pdb

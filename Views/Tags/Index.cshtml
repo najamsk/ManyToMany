@@ -1,0 +1,41 @@
+@model IEnumerable<M2M.Models.Tag>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Title
+        </th>
+        <th>
+            Movies
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.tagID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.tagID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.tagID })
+        </td>
+        <td>
+			@item.Title
+        </td>
+        <td>
+			@(item.Movies == null ? "None" : item.Movies.Count.ToString())
+        </td>
+    </tr>
+}
+
+</table>
+
+

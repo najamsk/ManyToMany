@@ -1,0 +1,30 @@
+@model M2M.ViewModels.MovieCreateViewModel
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Movie.Title)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Movie.Title)
+    @Html.ValidationMessageFor(model => model.Movie.Title)
+</div>
+
+
+<div>
+
+@Html.DropDownList("Tags", new SelectList(Model.Tags, "TagID", "Title"), "choose some", new {multiple="multiple", @class="chzn-select ui-ctrl-wide"})
+</div>
+
+<div style="display:none;">
+Tag Repo: @Model.Tags.Count()
+
+@foreach (var item in Model.Tags)
+{
+   <p> @item.Title </p>
+}
+
+
+
+</div>
+
