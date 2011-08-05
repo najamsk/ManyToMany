@@ -1,0 +1,1 @@
+﻿Trying out many to many relations with asp.net MVC3 scaffolding
