@@ -57,6 +57,13 @@ namespace M2M.Controllers
         public ActionResult Create(Movie movie, FormCollection MovieForm)
         {
             if (ModelState.IsValid) {
+
+                //how to add tags to this movie object? I am getting user selected tag ids posted back 
+                foreach (var tag in MovieForm["Tags"].Split(','))
+                {
+                    movie.Tags.Add(new Tag() { tagID = Convert.ToInt32(tag)});
+                }
+                
                 movieRepository.InsertOrUpdate(movie);
                 movieRepository.Save();
                 return RedirectToAction("Index");
