@@ -11,6 +11,9 @@ namespace M2M.Models
         public int MovieID { get; set; }
         public string Title { get; set; }
         public virtual ICollection<Tag> Tags{ get; set; }
+        public Movie() {
+            Tags = new List<Tag>();
+        }
     }
 
     public class Tag {

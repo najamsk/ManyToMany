@@ -61,7 +61,9 @@ namespace M2M.Controllers
                 //how to add tags to this movie object? I am getting user selected tag ids posted back 
                 foreach (var tag in MovieForm["Tags"].Split(','))
                 {
-                    movie.Tags.Add(new Tag() { tagID = Convert.ToInt32(tag)});
+                    var _tag = new Tag { tagID = Convert.ToInt32(tag) };
+                    //movie.Tags is null
+                    movie.Tags.Add(_tag);                   
                 }
                 
                 movieRepository.InsertOrUpdate(movie);

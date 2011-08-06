@@ -1,4 +1,4 @@
-@model M2M.Models.Movie
+@model M2M.ViewModels.MovieCreateViewModel
 
 @{
     ViewBag.Title = "Edit";
@@ -11,7 +11,7 @@
     <fieldset>
         <legend>Movie</legend>
 
-        @Html.HiddenFor(model => model.MovieID)
+        @Html.HiddenFor(model => model.Movie.MovieID)
 		@Html.Partial("_CreateOrEdit", Model)
 
         <p>
