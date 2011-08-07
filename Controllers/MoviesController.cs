@@ -59,10 +59,13 @@ namespace M2M.Controllers
             if (ModelState.IsValid) {
 
                 //how to add tags to this movie object? I am getting user selected tag ids posted back 
+                //movie.Tags = new List<Tag>();
                 foreach (var tag in MovieForm["Tags"].Split(','))
                 {
-                    var _tag = new Tag { tagID = Convert.ToInt32(tag) };
+                    var _tag = new Tag { tagID = Convert.ToInt32(tag)};
+                    
                     //movie.Tags is null
+                   
                     movie.Tags.Add(_tag);                   
                 }
                 
@@ -70,7 +73,10 @@ namespace M2M.Controllers
                 movieRepository.Save();
                 return RedirectToAction("Index");
             } else {
-				return View();
+                var m = new M2M.ViewModels.MovieCreateViewModel();
+
+                m.Tags = tagRepository.All.ToList<Tag>();
+                return View(m);
 			}
         }
         
@@ -79,7 +85,12 @@ namespace M2M.Controllers
  
         public ActionResult Edit(int id)
         {
-             return View(movieRepository.Find(id));
+            var model = new M2M.ViewModels.MovieCreateViewModel();
+            var eMovie = movieRepository.Find(id);
+            
+            model.Movie = eMovie;
+            model.Tags = eMovie.Tags.ToList<Tag>();
+            return View(model);
         }
 
         //

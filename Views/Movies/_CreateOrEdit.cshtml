@@ -13,7 +13,7 @@
 
 <div>
 
-@Html.DropDownList("Tags", new SelectList(Model.Tags, "TagID", "Title"), "choose some", new {multiple="multiple", @class="chzn-select ui-ctrl-wide"})
+@Html.DropDownList("Tags", new SelectList(Model.Tags, "tagID", "Title"), null, new {multiple="multiple", @class="chzn-select ui-ctrl-wide"})
 </div>
 
 <div style="display:none;">

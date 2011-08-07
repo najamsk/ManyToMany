@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
 
 namespace M2M
 {
@@ -31,6 +32,7 @@ namespace M2M
 
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(new DropCreateDatabaseIfModelChanges<M2M.Models.M2MContext>());
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

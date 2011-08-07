@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
+using System.Data.Objects;
 
 namespace M2M.Models
 { 
@@ -35,6 +36,13 @@ namespace M2M.Models
         {
             if (movie.MovieID == default(int)) {
                 // New entity
+                //to add realtion between this new movie and all existed tags in db we need to set state of 
+                //each tag to Unchanged otherwise it will insert new tags into db with auto genrated Ids and 
+                //other colums set to null/empty
+                foreach (var tag in movie.Tags)
+                {
+                    context.Entry(tag).State = EntityState.Unchanged;
+                }
                 context.Movies.Add(movie);
             } else {
                 // Existing entity
